@@ -91,5 +91,6 @@
                 </div>
               </div>
       </div>
+      <div class="clearfix"></div>
     </div><!-- end header-->
     <div class="clearfix"></div>

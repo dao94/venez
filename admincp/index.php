@@ -5,6 +5,7 @@ $sp = new Categories();
 if($_SESSION['ulevel'] != 6)
   header('Location:../');
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,7 +36,7 @@ if($_SESSION['ulevel'] != 6)
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="glyphicon glyphicon-user"></b> Administrator <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="glyphicon glyphicon-user"></b> <?php echo $_SESSION['userInfo']['username']?><b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="#">Thông tin cá nhân</a></li>
                     <li><a href="../index.php?page=logout">Đăng xuất</a></li>
@@ -60,10 +61,10 @@ if($_SESSION['ulevel'] != 6)
                 <div class="panel-body">
                   <ul>
                     <li><a href="index.php"><b class="glyphicon glyphicon-home"></b> Tổng quan</a></li>
-                    <li class="dropdown"><a href="index.php?action=cat"><b class="glyphicon glyphicon-bookmark"></b> Loại quần áo</a>
+                    <li class="dropdown"><a href="index.php?action=cat"><b class="glyphicon glyphicon-bookmark"></b> Loại</a>
 
                     </li>
-                    <li><a href="index.php?action=product"><b class="glyphicon glyphicon-list-alt"></b> Quần áo</a>
+                    <li><a href="index.php?action=product"><b class="glyphicon glyphicon-list-alt"></b> Sản phẩm</a>
                         <ul>
                             <li><a href="index.php?action=add_product"><b class="glyphicon glyphicon-plus"></b> Thêm sản phẩm</a></li>
                         </ul>

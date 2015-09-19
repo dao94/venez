@@ -95,9 +95,9 @@ class Categories extends Config{
         }
     }
 
-    public function update_product($cid,$tensp,$loaisp,$gia,$size,$trangthai,$mota){
+    public function update_product($cid,$tensp,$loaisp,$gia,$size,$trangthai,$mota,$hinhanh){
         $cid=$this->db->real_escape_string($cid);
-        $this->db->query("UPDATE sanpham SET tensp='$tensp',maloai='$loaisp',gia='$gia',size='$size',trangthai='$trangthai',mota='$mota' where masp=$cid")or die("loi");
+        $this->db->query("UPDATE sanpham SET tensp='$tensp',maloai='$loaisp',gia='$gia',size='$size',hinhanh = '$hinhanh',trangthai='$trangthai',mota='$mota' where masp=$cid")or die("loi");
         if( $this->db->affected_rows){
             return true;
         }

@@ -1,14 +1,11 @@
-<meta charset="utf8"/>
 <?php
-header('Content-Type: text/html; charset=utf-8');
 if($_SERVER['REQUEST_METHOD']=='POST'){
-    $errors=array();
+    $errors = array();
     if(empty($_POST['loaisp'])){
         $errors='loaisp';
     }else{
         $loaisp=$sp->db->real_escape_string($_POST['loaisp']);
-    }
-}   
+    }   
     if(empty($_POST['tensp'])){
         $errors='tensp';
     }else{
@@ -19,7 +16,17 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     }else{
         $price=$sp->db->real_escape_string($_POST['price']);
     }
-     if(empty($_POST['status'])){
+    if (isset($_FILES['hinhanh']) && $_FILES['hinhanh']['name'] != '') {
+        $allowExt = array('jpg','png','jpeg');
+        $Ext = end(explode('.',$_FILES['hinhanh']['name']));
+        if (in_array($Ext,$allowExt)) {
+            $newName = md5(time()).".".$Ext;
+            move_uploaded_file($_FILES['hinhanh']['tmp_name'],"../uploads/product/".$newName);
+        }
+    }else{
+        $errors['hinhanh'];
+    }
+    if(empty($_POST['status'])){
         $errors='status';
     }else{
         $status=$sp->db->real_escape_string($_POST['status']);
@@ -35,22 +42,22 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         $mota=$sp->db->real_escape_string($_POST['mota']);
     }
     if(empty($errors)){
-        $q=$sp->update_product($_GET['id'],$tensp,$loaisp,$price,$size,$status,$mota);
+        $q=$sp->update_product($_GET['id'],$tensp,$loaisp,$price,$size,$status,$mota,$newName);
         if($q){
             $messa='sửa thành công.nhấn vào <a href="index.php?action=product"> đây </a> để quay về trang trước';
         }else{
             $messa='sửa thất bại';
         }
+    } else {
+      $messa="vui lòng nhập đầy đủ các fields";
     }
-     else{
-            $messa="vui lòng nhập đầy đủ các fields";
-        }
+  }
 ?>
 <h3 class="text-center" >sửa Loại sản phẩm</h3>
   <div class="row">
     <div class="col-md-6">
     <?php if(isset($messa)) echo $messa;?>
-      <form class="form-inline form" action="" method="POST">
+      <form class="form-inline form" action="" method="POST" enctype="multipart/form-data">
       <?php
         if(isset($_GET['id']) && filter_var($_GET['id'],FILTER_VALIDATE_INT,array('min_range'=>1))){
             $pid=$sp->db->real_escape_string($_GET['id']);
@@ -77,7 +84,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         </div>
         <div class="group-control">
           <label for="description">Hình ảnh</label>
-          <input type="file" class="form-control" id="description" name="hinhanh" />
+          <input type="file" class="form-control" id="description" name="hinhanh"  />
+          <img src="../uploads/product/<?php echo $v['hinhanh'];?>" alt="alt" width="80" class="img-responsive" style="margin:10px">
         </div>
         <div class="group-control">
           <label for="description">Giá</label>
