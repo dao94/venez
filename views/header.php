@@ -5,8 +5,8 @@
     <title>Venez beautes - Đẹp từng minimet!</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
-    <link href="css/style.css" rel="stylesheet" media="screen" />
+    <link href="<?php echo $curentUrl;?>/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="<?php echo $curentUrl;?>/css/style.css" rel="stylesheet" media="screen" />
   </head>
   <body>
     <div class="header">
@@ -43,28 +43,28 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand logo" href="index.php"><img src="images/logo.png" alt="LOGO" /></a>
+              <a class="navbar-brand logo" href="<?php echo $curentUrl;?>"><img src="<?php echo $curentUrl;?>/images/logo.png" alt="LOGO" /></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right menu">
                 <li <?php echo !isset($_GET['page']) ? 'class="active"' : '';?> >
-                  <a href="index.php">Trang chủ</a>
+                  <a href="<?php echo $curentUrl;?>">Trang chủ</a>
                 </li>
                 <li <?php echo (isset($_GET['page']) && $_GET['page'] == 'gioithieu') ? 'class="active"' : '';?> >
-                  <a href="index.php?page=gioithieu">Giới thiệu</a>
+                  <a href="<?php echo $curentUrl;?>/gioithieu">Giới thiệu</a>
                 </li>
                 <li <?php echo (isset($_GET['page']) && $_GET['page'] == 'danhsachsp') ? 'class="active"' : '';?>>
-                  <a href="index.php?page=danhsachsp">Sản phẩm</a></li>
+                  <a href="<?php echo $curentUrl;?>/danhsachsp">Sản phẩm</a></li>
                 <li <?php echo (isset($_GET['page']) && $_GET['page'] == 'tintuc') ? 'class="active"' : '';?>>
-                  <a href="index.php?page=tintuc">Tin tức</a>
+                  <a href="<?php echo $curentUrl;?>/tintuc">Tin tức</a>
                 </li>
                 <li <?php echo (isset($_GET['page']) && $_GET['page'] == 'fqa') ? 'class="active"' : '';?>>
-                  <a href="index.php?page=fqa">Hỏi đáp</a>
+                  <a href="<?php echo $curentUrl;?>/fqa">Hỏi đáp</a>
                 </li>
                 <li <?php echo (isset($_GET['page']) && $_GET['page'] == 'lienhe') ? 'class="active"' : '';?>>
-                  <a href="index.php?page=lienhe">Liên hệ</a>
+                  <a href="<?php echo $curentUrl;?>/lienhe">Liên hệ</a>
                 </li>
               </ul>
             </div><!-- /.navbar-collapse -->
@@ -80,13 +80,13 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="item">
-                    <img alt="First slide" data-src="holder.js/900x500/auto/#777:#555/text:First slide" src="images/0.png" width="100%" height="300px"/>
+                    <img alt="First slide" data-src="holder.js/900x500/auto/#777:#555/text:First slide" src="<?php echo $curentUrl;?>/images/0.png" width="100%" height="300px"/>
                   </div>
                   <div class="item">
-                    <img alt="Second slide" data-src="holder.js/900x500/auto/#666:#444/text:Second slide" src="images/0.png" width="100%">
+                    <img alt="Second slide" data-src="holder.js/900x500/auto/#666:#444/text:Second slide" src="<?php echo $curentUrl;?>/images/0.png" width="100%">
                   </div>
                   <div class="item active">
-                    <img alt="Third slide" data-src="holder.js/900x500/auto/#555:#333/text:Third slide" src="images/0.png" width="100%">
+                    <img alt="Third slide" data-src="holder.js/900x500/auto/#555:#333/text:Third slide" src="<?php echo $curentUrl;?>/images/0.png" width="100%">
                   </div>
                 </div>
               </div>

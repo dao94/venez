@@ -9,7 +9,7 @@
                   <li><a href="#">Trợ giúp</a></li>
                   <li><a href="#">Chính sách khách hàng</a></li>
                   <li><a href="#">Hướng dẫn mua hàng</a></li>
-                  <li><a href="index.php?page=lienhe">Gửi phản hồi / ý kiến</a></li>
+                  <li><a href="<?php echo $curentUrl;?>/lienhe">Gửi phản hồi / ý kiến</a></li>
               </ul>
             </div><!--end .hotrokhachhang-->
           </div>
@@ -179,7 +179,8 @@
                   <li><strong>Giá</strong> : <span class="price"></span>vnđ</li>
                   <li><strong>Size</strong> : <span class="size"></span></li>
                   <li><strong>Tình trạng</strong> : <span class="label label-success">Còn hàng</span></li>
-                  <form method="POST" action="index.php?page=add_cart">
+
+                  <form method="POST" action="<?php echo $curentUrl;?>/giohang">
                   <li><strong>Số lượng</strong> : <input type="number" min="1" max="50" value="1" name="qty" /></li>
                   <input type="hidden" name="masp" class="hiddenId"/>
                   <li><button class="btn btn-primary" type="submit">Cho vào giỏ</button></li>

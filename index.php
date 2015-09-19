@@ -1,6 +1,9 @@
 <?php
+    $curentUrl = 'http://venez.local.com';
     ob_start();
     session_start(); 
+    error_reporting(-1);
+    ini_set('display_errors', 'On');
     require('include/functions.php');
     require('include/class.admincp.php');
     $view = new Categories();

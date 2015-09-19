@@ -20,11 +20,13 @@
             ?>
               <div class="product-item col-md-3 col-sm-4 col-sx-6">
                 <div class="thumb text-center">
-                  <a href="index.php?page=sanpham&id=<?php echo $p['masp'];?>"><img src="uploads/product/<?php echo $p['hinhanh'];?>" alt="alt" class="img-responsive" /></a>
+                  <a href="<?php echo $curentUrl;?>/sanpham/<?php echo $p['masp'];?>">
+                    <img src="<?php echo $curentUrl;?>/uploads/product/<?php echo $p['hinhanh'];?>" alt="alt" class="img-responsive" />
+                  </a>
                   <button class="btn btn-primary btnPreview" data-toggle="modal" data-target="#myModal" data-id="<?php echo $p['masp'];?>" data-name="<?php echo $p['tensp'];?>" data-price="<?php echo number_format($p['gia']);?> " data-img="<?php echo $p['hinhanh'];?>">Xem ngay</button>
                   <span class="status"><i class="glyphicon glyphicon-shopping-cart"></i> <?php echo $view->product_statusIndex($p['trangthai']);?></span>
                 </div>
-                <h2 class="product-name"><a href="index.php?page=sanpham&id=<?php echo $p['masp'];?>"><?php echo $p['tensp'];?></a></h2>
+                <h2 class="product-name"><a href="<?php echo $curentUrl;?>/sanpham/<?php echo $p['masp'];?>"><?php echo $p['tensp'];?></a></h2>
                 <div class="row">
                   <div class="col-md-6 price"><?php echo number_format($p['gia']);?> vnđ</div>
                   <div class="col-md-6 product-code">Mã : <?php echo $p['masp'];?></div>
