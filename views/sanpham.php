@@ -50,7 +50,7 @@
         <div class="tab-content">
           <div class="tab-pane active" id="home">
               <p class="chitietsanpham">
-                <?php echo $item['motasp'];?>
+                <?php echo html_entity_decode($item['motasp']);?>
               </p>
           </div>
           <div class="tab-pane" id="comment">

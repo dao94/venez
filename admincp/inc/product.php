@@ -8,7 +8,7 @@
     <th>Size</th>
     <th>Giá</th>
     <th>Trạng thái</th>
-    <th>Hành động</th>
+    <th style="width:130px">Hành động</th>
 </thead>
 <tbody>
     <?php 

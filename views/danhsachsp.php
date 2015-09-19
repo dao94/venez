@@ -1,6 +1,4 @@
-<div class="main-page container">
-            
-            
+<div class="main-page container" style="margin-top:15px">
       <div class="row">
         <div class="col-md-9">
         <ol class="breadcrumb">
@@ -17,15 +15,9 @@
                 }else{
                     $data = $view->show_product(" ORDER BY masp DESC");
                 }
-
-          
                 if(!empty($data)){
-                    
-                
                 foreach ($data as $p) {
             ?>
-            
-            
               <div class="product-item col-md-3 col-sm-4 col-sx-6">
                 <div class="thumb text-center">
                   <a href="index.php?page=sanpham&id=<?php echo $p['masp'];?>"><img src="uploads/product/<?php echo $p['hinhanh'];?>" alt="alt" class="img-responsive" /></a>
@@ -41,7 +33,7 @@
             <?php
                 }
                 }else{
-                    echo '<p>Không có sản phẩm nào trong mục này</p>'; 
+                    echo '<p style="margin-left:10px">Không có sản phẩm nào trong mục này</p>'; 
                 }
             ?>
             </div><!-- end list-->
