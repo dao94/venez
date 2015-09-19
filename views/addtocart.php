@@ -12,5 +12,5 @@
         }
         
     }
-    header('Location: index.php?page=giohang');
+    header('Location:'.$curentUrl.'/giohang');
 ?>

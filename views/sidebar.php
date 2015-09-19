@@ -39,8 +39,8 @@
             </div><!--sibar right-->
             <div class="sidebar-right muahang">
               <p style="text-transform: uppercase;">HƯỚNG DẪN MUA HÀNG TẠI Venez beautés</p>
-              <img  class="img-responsive" src="images/tui_bg.png">
-              <img  class="tui2" src="images/tui2_bg.png">
+              <img  class="img-responsive" src="<?php echo $curentUrl?>/images/tui_bg.png">
+              <img  class="tui2" src="<?php echo $curentUrl?>/images/tui2_bg.png">
             </div><!--sidebar-right muahang-->
             <div class="clearfix"></div>
             <div class="facebook ">
@@ -50,7 +50,7 @@
       </div>
        <div class="col-md-12">
           <div class="dathang">
-              <img class="img-responsive" src="images/anh5_bg.png"/>
+              <img class="img-responsive" src="<?php echo $curentUrl?>/images/anh5_bg.png"/>
           </div><!--end.dathang-->
         </div>
     </div>

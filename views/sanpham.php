@@ -1,10 +1,15 @@
 <div class="main-page container">
       <div class="row"> 
         <div class="col-md-9">
+
           <?php
             $data = $view->show_product("WHERE masp = $_GET[id]");
-            if($data)
+            if($data) {
               $item = $data[0];
+            } else {
+              echo 'not ok !';
+              exit();
+            }
           ?>
           <div class="row">
             <div class="menu-introduction">
@@ -17,7 +22,7 @@
             </div>
             <div class="col-md-8 sp-introduction">
                 <h2 class="title-production"><?php echo $item['tensp'];?></h2>
-                <img class="img-responsive" src="<?php echo $curentUrl;?>/images/like_bg.png"/>
+                <div class="fb-like" data-href='<?php echo $curentUrl?>/sanpham/<?php echo $item['masp']?>' data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
                 <p><?php echo html_entity_decode($item['motasp']);?></p>
                 <div class="line-production"></div>
             <div class="row">
@@ -25,7 +30,7 @@
                   <p>Giá : <?php echo number_format($item['gia']);?> vnđ</p>
                   <p>Size : <?php echo $item['size'];?></p>
                   <p class="text-soluong">Số lượng :
-                    <form method="POST" action="index.php?page=add_cart" >
+                    <form method="POST" action="<?php echo $curentUrl?>/add_cart" >
                     <input type="number" min="1" max="50" value="1" name="qty" />
                     <input type="hidden" value="<?php echo $item['masp'];?>" name="masp"/>
                   </p>
@@ -55,7 +60,7 @@
               </p>
           </div>
           <div class="tab-pane" id="comment">
-              <div class="fb-comments" data-href="https://www.facebook.com/Venez-beaut%C3%A9s-828170213946960/timeline/" data-width="100%" data-numposts="10"></div>
+              <div class="fb-comments" data-href="https://www.facebook.com/Venez-beaut%C3%A9s-828170213946960/" data-width="100%" data-numposts="10"></div>
           </div>
         </div>
           <div class="row">
@@ -72,7 +77,7 @@
               <div class="product-item col-md-3 col-sm-4 col-sx-6">
                 <div class="thumb">
                   <a href="<?php echo $curentUrl;?>/sanpham/<?php echo $val['masp']?>"><img src="<?php echo $curentUrl;?>/uploads/product/<?php echo $val['hinhanh'];?>" alt="alt" class="img-responsive" /></a>
-                  <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Xem ngay</button>
+                  <button class="btn btn-primary btnPreview" data-toggle="modal" data-target="#myModal" data-id="<?php echo $val['masp'];?>" data-name="<?php echo $val['tensp'];?>" data-price="<?php echo number_format($val['gia']);?> " data-img="<?php echo $val['hinhanh'];?>">Xem ngay</button>
                   <span class="status"><i class="glyphicon glyphicon-shopping-cart"></i><?php echo $view->product_statusIndex($val['trangthai']);?></span>
                 </div>
                 <h2 class="product-name"><a href=""><?php echo $val['tensp'];?></a></h2>

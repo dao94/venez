@@ -172,7 +172,7 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-4">
-                <a href=""><img src="images/product.jpg" alt="alt" class="img-responsive modalImg" /></a>
+                <a href=""><img src="<?php echo $curentUrl?>/images/product.jpg" alt="alt" class="img-responsive modalImg" /></a>
               </div>
               <div class="col-md-7 col-sm-7 col-xs-7">
                 <ul class="info-product">
@@ -180,7 +180,7 @@
                   <li><strong>Size</strong> : <span class="size"></span></li>
                   <li><strong>Tình trạng</strong> : <span class="label label-success">Còn hàng</span></li>
 
-                  <form method="POST" action="<?php echo $curentUrl;?>/giohang">
+                  <form method="POST" action="<?php echo $curentUrl?>/add_cart" >
                   <li><strong>Số lượng</strong> : <input type="number" min="1" max="50" value="1" name="qty" /></li>
                   <input type="hidden" name="masp" class="hiddenId"/>
                   <li><button class="btn btn-primary" type="submit">Cho vào giỏ</button></li>
@@ -197,8 +197,8 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?php echo $curentUrl?>/js/jquery.js"></script>
+    <script src="<?php echo $curentUrl?>/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         
         $(document).ready(function(){
@@ -272,6 +272,7 @@
             }); // end btnLogin
             
             $('.btnPreview').click(function(){
+                var curl = "<?php $curentUrl;?>";
                 var productId = $(this).attr('data-id');
                 var productname = $(this).attr('data-name');
                 var productprice = $(this).attr('data-price');
@@ -280,7 +281,7 @@
                 $('#myModal .price').html(productprice);
                 $('#myModal .size').html('XL');
                 $('#myModal .hiddenId').val(productId);
-                $('.modalImg').attr('src','uploads/product/' + productImg);
+                $('.modalImg').attr('src',curl+'/uploads/product/' + productImg);
             });
             
         });

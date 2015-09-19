@@ -45,7 +45,7 @@
 				<tr>
 					<td><?php echo $v['masp'];?></td>
 					<td><?php echo $v['tensp'];?></td>
-					<td><img src="uploads/product/<?php echo $v['hinhanh'];?>" width="60" /></td>
+					<td><img src="<?php echo $curentUrl;?>/uploads/product/<?php echo $v['hinhanh'];?>" width="60" /></td>
 					<td><input type="number" name="qty[<?php echo $v['masp'];?>]" value="<?php echo $_SESSION['cart'][$v['masp']]['qty'];?>" /></td>
 					<td><?php echo number_format($v['gia']);?> vnd</td>
 					<td><?php echo number_format($v['gia'] * $_SESSION['cart'][$v['masp']]['qty']);?> vnd</td>
