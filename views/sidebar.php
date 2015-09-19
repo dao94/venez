@@ -10,7 +10,7 @@
                     $data = $view->Show_Category();
                     foreach ($data as $v) {
                 ?>
-                      <li><a href="index.php?page=danhsachsp&id=<?php echo $v['maloai'];?>"><?php echo $v['tenloai'];?></a></li>
+                      <li><a href="<?php echo $curentUrl;?>/danhsachsp/<?php echo $v['maloai'];?>"><?php echo $v['tenloai'];?></a></li>
                 <?php                    
                     }
                  ?>

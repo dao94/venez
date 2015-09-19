@@ -3,20 +3,21 @@
         <div class="col-md-9">
           <?php
             $data = $view->show_product("WHERE masp = $_GET[id]");
-            $item = $data[0];
+            if($data)
+              $item = $data[0];
           ?>
           <div class="row">
             <div class="menu-introduction">
                 <h4><a href="index.php">Trang Chủ</a>/<a href="index.php?page=danhsachsp&id=<?php echo $item['maloai'];?>"><?php echo $item['tenloai'];?></a>/<em><?php echo $item['tensp'];?></em></h4>
             </div><!--menu-introduction-->
           </div>
-          <div class="row produce-wp">
+          <div class="row produce-wp" style="padding-bottom:15px">
             <div class="col-md-4 anh-introduction">
-                <img class="img-responsive" src="uploads/product/<?php echo $item['hinhanh'];?>"/>
+                <img class="img-responsive" src="<?php echo $curentUrl;?>/uploads/product/<?php echo $item['hinhanh'];?>"/>
             </div>
             <div class="col-md-8 sp-introduction">
                 <h2 class="title-production"><?php echo $item['tensp'];?></h2>
-                <img class="img-responsive" src="images/like_bg.png"/>
+                <img class="img-responsive" src="<?php echo $curentUrl;?>/images/like_bg.png"/>
                 <p><?php echo html_entity_decode($item['motasp']);?></p>
                 <div class="line-production"></div>
             <div class="row">
@@ -63,20 +64,24 @@
               <h3>Sản phẩm liên quan</h3>
             </div><!-- end title-->
             <div class="list">
-
+            <?php
+              $ecs = $view->show_product("WHERE maloai = {$item['maloai']}");
+              if($ecs) {
+                foreach ($ecs as $val) {
+               ?>
               <div class="product-item col-md-3 col-sm-4 col-sx-6">
                 <div class="thumb">
-                  <a href=""><img src="images/product.jpg" alt="alt" class="img-responsive" /></a>
+                  <a href="<?php echo $curentUrl;?>/sanpham/<?php echo $val['masp']?>"><img src="<?php echo $curentUrl;?>/uploads/product/<?php echo $val['hinhanh'];?>" alt="alt" class="img-responsive" /></a>
                   <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Xem ngay</button>
-                  <span class="status"><i class="glyphicon glyphicon-shopping-cart"></i> Còn hàng</span>
+                  <span class="status"><i class="glyphicon glyphicon-shopping-cart"></i><?php echo $view->product_statusIndex($val['trangthai']);?></span>
                 </div>
-                <h2 class="product-name"><a href="">Đầm Vintage Chấm Bi</a></h2>
+                <h2 class="product-name"><a href=""><?php echo $val['tensp'];?></a></h2>
                 <div class="row">
-                  <div class="col-md-6 price">50.000 vnđ</div>
-                  <div class="col-md-6 product-code">Mã : D001</div>
+                  <div class="col-md-6 price"><?php echo number_format($val['gia']);?> vnđ</div>
+                  <div class="col-md-6 product-code">Mã : <?php echo $val['masp'];?></div>
                 </div>
               </div><!-- end product-item-->
-
+              <?php  } } ?>
             </div><!-- end list-->
           </div><!-- end product-->
           </div>
