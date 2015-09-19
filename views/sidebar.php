@@ -26,11 +26,11 @@
                 ?>
                 
                 <div class="media">
-                    <a class="pull-left" href="#">
+                    <a class="pull-left" href="index.php?page=chitiettin&id=<?php echo $item['matin'];?>">
                       <img class="media-object sidebar-image" src="uploads/news/<?php echo $item['hinhanh'];?>" alt="anh1" width="50"/>
                     </a>
                     <div class="media-body">
-                      <a href="#"><?php echo $item['tieude']; ?></a>
+                      <a href="index.php?page=chitiettin&id=<?php echo $item['matin'];?>"><?php echo $item['tieude']; ?></a>
                     </div>
                 </div>
                 <?php

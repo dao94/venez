@@ -236,13 +236,28 @@ class Categories extends Config{
         return $this->fetchData(); 
     }
 
-    public function insertNews($title,$content,$img){
-        $this->db->query("INSERT INTO tintuc(tieude,noidung,hinhanh,ngayviet) VALUES('$title','$img','$content',NOW())");
+    public function insertNews($title,$img,$content){
+        $content = htmlspecialchars($content);
+
+        $q = "INSERT INTO tintuc(tieude,noidung,hinhanh,ngayviet) VALUES('$title','$content','$img',NOW())";
+        
+        $this->db->query($q);
+
         if ($this->db->affected_rows) {
             return true;
         }else{
             return false;
         }
+    }
+    public function DelNews($id){
+        $this->db->query("DELETE FROM tintuc where matin='$id'");
+        if($this->db->affected_rows){
+            return true;
+        }
+        else{
+            return false;
+        }
+
     }
     
 }// END CLASS CATEGORIES

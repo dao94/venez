@@ -42,7 +42,7 @@
         </div>
         <div class="group-control">
           <label for="description">Nội dung</label>
-          <textarea class="form-control" name="noidung"></textarea>
+          <textarea class="form-control" name="noidung" id="editor" style="width:100%"></textarea>
         </div>
         <div class="group-control">
           <label for="description"></label>

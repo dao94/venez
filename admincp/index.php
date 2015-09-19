@@ -20,7 +20,7 @@ if($_SESSION['ulevel'] != 6)
   </head>
   <body>
     <div class="wrap-page">
-      <div class="container">
+      <div class="container-fluid">
         <div class="menu ">
           <nav class="navbar navbar-inverse" role="navigation">
             <div class="navbar-header">
@@ -123,6 +123,9 @@ if($_SESSION['ulevel'] != 6)
                case'news':
                include('inc/news.php');
                break;
+               case'del_news':
+               include('inc/del_news.php');
+               break;
                case'add_news':
                include('inc/add_news.php');
                break;
@@ -140,11 +143,9 @@ if($_SESSION['ulevel'] != 6)
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     
-    <script src="../lib/tinymce/tinymce.min.js"></script>
+    <script src="../lib/ckeditor/ckeditor.js"></script>
     <script type="text/javascript">
-        tinymce.init({
-            selector: "textarea"
-         });
+        CKEDITOR.replace( 'editor' );
     </script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     

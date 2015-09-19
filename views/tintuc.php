@@ -16,7 +16,7 @@
 
                 $TotalPage = ceil($total / $item_page);
 
-                $data = $view->getNews('LIMIT '.$item_page.' OFFSET '.$offset.' ');
+                $data = $view->getNews('ORDER BY matin DESC LIMIT '.$item_page.' OFFSET '.$offset.'');
 
                     foreach ($data as $item) {
             ?>
@@ -26,7 +26,7 @@
                     </a>
                     <div class="media-body">
                       <a href="index.php?page=chitiettin&id=<?php echo $item['matin'];?>"><h5><?php echo $item['tieude']; ?></h5></a>
-                      <p class="text-left"><?php echo strip_tags($item['excerpt']);?></p>
+                      <p class="text-left"><?php echo strip_tags(html_entity_decode($item['excerpt']));?></p>
                     </div>
                 </div>
             <?php
