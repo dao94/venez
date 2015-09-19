@@ -63,7 +63,10 @@ a:hover{
   line-height: 60px;
 }
 .slide{
-  height:380px;
+  /*//height:380px;*/
+}
+.main-page{
+  margin-top:20px;
 }
 .product-list .title h3 {
     color: #43B8B4;
