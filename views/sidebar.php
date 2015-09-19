@@ -38,13 +38,13 @@
                 ?>
             </div><!--sibar right-->
             <div class="sidebar-right muahang">
-              <p>HƯỚNG DẪN MUA HÀNG TẠI NHÍM SHOP</p>
+              <p style="text-transform: uppercase;">HƯỚNG DẪN MUA HÀNG TẠI Venez beautés</p>
               <img  class="img-responsive" src="images/tui_bg.png">
               <img  class="tui2" src="images/tui2_bg.png">
             </div><!--sidebar-right muahang-->
             <div class="clearfix"></div>
             <div class="facebook ">
-              <div class="fb-like-box" data-href="https://www.facebook.com/pages/Nhim-Shop-SH2/637542629599240?fref=ts" data-width="262" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+              <div class="fb-page" data-href="https://www.facebook.com/Venez-beaut%C3%A9s-828170213946960" data-width="262" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
             </div><!--facebook-->
         </div><!--end col-md-3-slide-bar-->
       </div>
