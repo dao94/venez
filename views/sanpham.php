@@ -44,13 +44,17 @@
             </div><!--end.sp-introduction-->
           </div><!--end .produce-wp-->
           <ul class="nav nav-tabs" id="myTab" style="margin-top:10px">
-            <li class="active"><a href="#home" data-toggle="tab">chi tiết sản phẩm</a></li>
+            <li class="active"><a href="#home" data-toggle="tab">Chi tiết sản phẩm</a></li>
+            <li><a href="#comment" data-toggle="tab">Bình luận</a></li>
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="home">
               <p class="chitietsanpham">
                 <?php echo $item['motasp'];?>
               </p>
+          </div>
+          <div class="tab-pane" id="comment">
+              <div class="fb-comments" data-href="https://www.facebook.com/Venez-beaut%C3%A9s-828170213946960/timeline/" data-width="100%" data-numposts="10"></div>
           </div>
         </div>
           <div class="row">

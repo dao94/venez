@@ -9,7 +9,7 @@
                   <li><a href="#">Trợ giúp</a></li>
                   <li><a href="#">Chính sách khách hàng</a></li>
                   <li><a href="#">Hướng dẫn mua hàng</a></li>
-                  <li><a href="#">Gửi phản hồi / ý kiến</a></li>
+                  <li><a href="index.php?page=lienhe">Gửi phản hồi / ý kiến</a></li>
               </ul>
             </div><!--end .hotrokhachhang-->
           </div>
@@ -18,9 +18,9 @@
               <h4>VỀ NHÍM SHOP</h4>
               <div class="line-hotro"></div>
               <ul>
-                  <li><a href="#">Giới thiệu về Nhím Shop</a></li>
+                  <li><a href="#">Giới thiệu về Venez beautés</a></li>
                   <li><a href="#">Điều khoản sử dụng</a></li>
-                  <li class="face"><a href="#">Facebook</a></li>
+                  <li class="face"><a href="https://www.facebook.com/Venez-beaut%C3%A9s-828170213946960">Facebook</a></li>
                   <li class="google"><a href="#">Google +</a></li>
               </ul>
             </div><!--end .hotrokhachhang-->
@@ -30,10 +30,10 @@
               <h4>LIÊN HỆ</h4>
               <div class="line-hotro"></div>
               <ul>
-                  <li><a href="#">Cơ sở : Số 123 - đường Mỹ Đình - Từ Liêm - Hà Nội</a></li>
-                  <li><a href="#">HOTLINE : 0962987026</a></li>
-                  <li><a href="#">Email : sales@nhimshop.com</a></li>
-                  <li><a href="#">skype : nhimshop</a></li>
+                  <li><a href="#">Cơ sở : Ngõ 144, An Dương Vương, Hà Nội , Vietnam</a></li>
+                  <li><a href="#">HOTLINE : 0166.572.6864</a></li>
+                  <li><a href="#">Email : pthuymkt@gmail.com</a></li>
+                  <li><a href="#">skype : Venezbeautes</a></li>
               </ul>
             </div><!--end .hotrokhachhang-->
           </div>
