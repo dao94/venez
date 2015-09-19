@@ -229,7 +229,11 @@ class Categories extends Config{
 
     public function getNews($more = ''){
         $this->query = "SELECT *,LEFT(noidung,300) as excerpt FROM tintuc $more";
-        return $this->fetchData();   
+        return $this->fetchData(); 
+    }
+    public function countNews(){
+        $this->query = 'SELECT COUNT(matin) as total FROM  tintuc';
+        return $this->fetchData(); 
     }
 
     public function insertNews($title,$content,$img){
