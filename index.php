@@ -1,5 +1,5 @@
 <?php
-    $curentUrl = 'http://venez.local.com';
+    $curentUrl = 'http://localhost/venez';
     ob_start();
     session_start(); 
     error_reporting(-1);

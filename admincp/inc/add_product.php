@@ -110,7 +110,7 @@
                <div class="col-md-11">
                 <div class="group-control">
                   <label for="description">Mô tả sản phẩm</label>
-                  <textarea name="mota" class="form-control"></textarea>
+                  <textarea name="mota" class="form-control" id="editor"></textarea>
                 </div>
 
                 <div class="group-control">
